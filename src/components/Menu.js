@@ -1,31 +1,27 @@
 import React from "react";
 
-function Menu({ items }) {
+export default function Menu({ items = [] }) {
   return (
-    <div>
-      {items.map((item) => (
-        <div
-          key={item.id}
-          data-test-id={`menu-item-${item.category}`}
-          style={{
-            border: "1px solid gray",
-            borderRadius: "8px",
-            padding: "8px",
-            margin: "10px",
-            display: "inline-block",
-          }}
-        >
-          <img
-            src={item.img}
-            alt={item.name}
-            style={{ width: "120px", height: "100px", borderRadius: "6px" }}
-          />
-          <p>{item.name}</p>
-          <p>${item.price}</p>
-        </div>
-      ))}
+    <div className="menu-grid">
+      {items.map((item) => {
+        const testId =
+          item.category === "Breakfast"
+            ? "menu-item-breakfast"
+            : item.category === "Lunch"
+            ? "menu-item-lunch"
+            : "menu-item-shakes";
+
+        return (
+          <div className="menu-card" key={item.id} data-test-id={testId}>
+            <img src={item.image} alt={item.name} className="menu-img" />
+            <div className="menu-info">
+              <h3 className="menu-name">{item.name}</h3>
+              <p className="menu-category">{item.category}</p>
+              <p className="menu-price">₹{item.price}</p>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
-
-export default Menu;
