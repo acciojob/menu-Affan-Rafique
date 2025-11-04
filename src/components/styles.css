@@ -1,72 +1,61 @@
-:root {
-  --bg: #0b0f14;
-  --card: #111827;
-  --panel: #0f141a;
-  --border: #222b36;
-  --text: #e6edf3;
-  --muted: #8b9bb0;
-  --brand: #ff3b30;
-  --ghost: #2a3442;
-  --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-  --radius: 14px;
+#main {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
 
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 15px/1.5 system-ui, -apple-system, Segoe UI, Inter, Roboto, Ubuntu, Arial, sans-serif;
+.title {
+  margin: 0 0 12px;
+  font-size: 28px;
 }
 
-.app { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
-.title { margin: 8px 0 16px; text-align: center; }
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
 
-.container { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
-
-.filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
-.btn {
-  appearance: none;
-  border: 1px solid var(--border);
-  background: var(--brand);
-  color: white;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-weight: 800;
+.filters button {
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  background: #fff;
   cursor: pointer;
-  box-shadow: var(--shadow);
-}
-.btn.active { outline: 2px solid rgba(255,255,255,.18); }
-.btn.ghost {
-  background: var(--ghost);
-  color: var(--text);
-  box-shadow: none;
+  border-radius: 6px;
 }
 
-.grid {
+.menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+.menu-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  background: #fff;
 }
 
-.thumb {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.menu-img {
   display: block;
-  background: #0d1218;
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  background: #f6f6f6;
 }
 
-.body { padding: 12px; }
-.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-.name { margin: 0; font-size: 16px; font-weight: 800; }
-.price { font-weight: 800; }
-.category { color: var(--muted); margin-top: 6px; text-transform: capitalize; }
+.menu-info {
+  padding: 10px;
+}
+
+.menu-name {
+  margin: 0 0 4px;
+  font-size: 16px;
+}
+
+.menu-category,
+.menu-price {
+  margin: 0;
+  color: #555;
+}
