@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Menu from "./Menu";
 import "./styles.css";
 
-
 const initialItems = [
   { id: 1, name: "Pancakes", category: "Breakfast", price: 120, image: "https://via.placeholder.com/120" },
   { id: 2, name: "Omelette", category: "Breakfast", price: 90, image: "https://via.placeholder.com/120" },
@@ -14,11 +13,8 @@ const initialItems = [
 
 export default function App() {
   const [items] = useState(initialItems);
-  const [category, setCategory] = useState("Breakfast"); // default can be anything
+  const [category, setCategory] = useState("Breakfast"); // default category
 
-  const handleFilter = (cat) => setCategory(cat);
-
-  // Filter items strictly by selected category (as required by tests)
   const visibleItems = items.filter((it) => it.category === category);
 
   return (
@@ -26,15 +22,9 @@ export default function App() {
       <h1 className="title">Menu</h1>
 
       <div className="filters">
-        <button id="filter-btn-1" onClick={() => handleFilter("Breakfast")}>
-          Breakfast
-        </button>
-        <button id="filter-btn-2" onClick={() => handleFilter("Lunch")}>
-          Lunch
-        </button>
-        <button id="filter-btn-3" onClick={() => handleFilter("Shakes")}>
-          Shakes
-        </button>
+        <button id="filter-btn-1" onClick={() => setCategory("Breakfast")}>Breakfast</button>
+        <button id="filter-btn-2" onClick={() => setCategory("Lunch")}>Lunch</button>
+        <button id="filter-btn-3" onClick={() => setCategory("Shakes")}>Shakes</button>
       </div>
 
       <Menu items={visibleItems} />
