@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Menu from "./Menu";
 import "./styles.css";
 
+
 const initialItems = [
   { id: 1, name: "Pancakes", category: "Breakfast", price: 120, image: "https://via.placeholder.com/120" },
   { id: 2, name: "Omelette", category: "Breakfast", price: 90, image: "https://via.placeholder.com/120" },
