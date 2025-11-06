@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Menu from './Menu'; // Correct path: same directory
-import '../styles.css'; // Correct path: up one directory
+import Menu from './Menu'; // In the same directory
+import './styles.css'; // <-- CORRECTED PATH: In the same directory
 
 // Master data for all menu items
 const allMenuItems = [
