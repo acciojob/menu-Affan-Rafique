@@ -6,7 +6,7 @@ const Menu = ({ items, filterItems }) => {
     <div>
       {/* Filter Buttons Container */}
       <div className="btn-container">
-        {/* Button for Breakfast with a specific ID for testing */}
+        {/* Button for Breakfast with id="filter-btn-1" */}
         <button
           className="filter-btn"
           id="filter-btn-1"
@@ -15,7 +15,7 @@ const Menu = ({ items, filterItems }) => {
           Breakfast
         </button>
 
-        {/* Button for Lunch with a specific ID for testing */}
+        {/* Button for Lunch with id="filter-btn-2" */}
         <button
           className="filter-btn"
           id="filter-btn-2"
@@ -24,7 +24,7 @@ const Menu = ({ items, filterItems }) => {
           Lunch
         </button>
 
-        {/* Button for Shakes with a specific ID for testing */}
+        {/* Button for Shakes with id="filter-btn-3" */}
         <button
           className="filter-btn"
           id="filter-btn-3"
@@ -39,7 +39,7 @@ const Menu = ({ items, filterItems }) => {
         {items.map((menuItem) => {
           const { id, title, price, img, desc, category } = menuItem;
           return (
-            // Each article has a dynamic data-test-id based on its category
+            // Each article needs this dynamic data-test-id for the tests
             <article
               key={id}
               className="menu-item"
