@@ -93,6 +93,7 @@ function App() {
   };
 
   return (
+    // This 'main' element MUST have the id="main"
     <main id="main">
       <section className="menu section">
         <div className="title">
